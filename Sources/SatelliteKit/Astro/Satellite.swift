@@ -21,6 +21,10 @@ public struct Satellite {
     public var ω: Double { return propagator.ω }        //###
     public var Ω: Double { return propagator.Ω }        //###
 
+    public var isSynchronous: Bool {
+        return propagator.tle.n₀ > 0.8 * π/720 && propagator.tle.n₀ < 1.2 * π/720
+    }
+
     public var extraInfo = [String: AnyObject]()
 
 /*┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
